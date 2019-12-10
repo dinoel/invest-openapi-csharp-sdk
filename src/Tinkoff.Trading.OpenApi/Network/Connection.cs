@@ -128,8 +128,7 @@ namespace Tinkoff.Trading.OpenApi.Network
 
         private void OnStreamingEvent(StreamingResponse response)
         {
-            var handler = StreamingEventReceived;
-            handler?.Invoke(this, new StreamingEventReceivedEventArgs(response));
+            StreamingEventReceived?.Invoke(this, new StreamingEventReceivedEventArgs(response));
         }
 
         public void Dispose()
